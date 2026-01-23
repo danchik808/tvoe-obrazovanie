@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/fonts/HelveticaNeueCyr-Roman.ttf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/fonts/HelveticaNeueCyr-Medium.ttf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gunterz';
+    src: url('/fonts/Gunterz-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+.mini-school-link{
+    display: flex;
+    width: 672px;
+    height: 167px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    border-radius: 40px;
+    background: var(--Accent-white, #F4F7FF);
+    position: relative;
+    flex-direction: column;
+    padding-top: 32px;
+    padding-left: 40px;
+    padding-bottom: 32px;
+}
+
+
+.hhl{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 3px;
+    align-items: center;
+}
+
+.hh{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 7px;
+}
+
+.mini-school_number{
+    color: var(--Accent, #012AE4);
+    font-family: "Gunterz";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.mini-school_headline{
+    color: #121212;
+    font-family: "Gunterz";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.mini-school_location{
+    box-sizing: border-box;
+    border-radius: 40px;
+    background-color: #012AE40D;
+    padding: 10px 15px;
+    color: #012AE4;
+    font-family: "Helvetica Neue" sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding-left: 38px !important;
+    background-image: url(../../public/img/geo.svg);
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+}
+
+.mini-school_text{
+    color: rgba(18, 18, 18, 0.70);
+    font-family: "Helvetica Neue" sans-serif;
+    max-width: 400px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.strelka{
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(../../public/img/strelka.svg);
+    bottom: 30px;
+    right: 70px;
+    transition: transform 0.2s ease;
+}
+
+.mini-school-link:hover .strelka {
+    transform: translateX(15px);
+    transition: transform 0.2s ease;
+    background-image: url(../../public/img/strelka-hover.svg);
+}

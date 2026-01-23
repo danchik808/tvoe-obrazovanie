@@ -1,0 +1,209 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/fonts/HelveticaNeueCyr-Roman.ttf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/fonts/HelveticaNeueCyr-Medium.ttf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gunterz';
+    src: url('/fonts/Gunterz-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+  margin: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto; 
+}
+
+.contacts-container{
+    display: flex;
+    flex-direction: row;
+    gap: 56px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1920px;
+    flex: 1 0 auto;
+}
+
+.contacts-left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contacts_headline{
+    color: var(--Black, #121212);
+    font-family: 'Gunterz';
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 13px;
+}
+
+.contacts_text{
+    color: rgba(18, 18, 18, 0.70);
+    font-family: "Helvetica Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    max-width: 500px;
+}
+
+.contacts-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.contacts-link{
+    display: flex;
+    position: relative;
+    height: 130px;
+    padding: 40px 30px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 30px;
+    background: var(--Background-white, #F5F5F5);
+}
+
+.contacts-link_text{
+    color: rgba(18, 18, 18, 0.80);
+    font-family: "Helvetica Neue" sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.contacts-link_headline{
+    color: rgba(18, 18, 18, 0.80);
+    font-family: "Helvetica Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+.contacts_strelka{
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url(../../public/img/strelka.svg);
+    right: 60px;
+    bottom: 35%;
+    transition: transform 0.2s ease;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contacts-link:hover .contacts_strelka{
+    transform: translateX(15px);
+    transition: transform 0.2s ease;
+    background-image: url(../../public/img/strelka-hover.svg);
+    background-repeat: no-repeat;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    max-width: 626px;
+    padding: 50px;
+    border-radius: 40px;
+    gap: 50px;
+    background: var(--Accent, #012AE4);
+}
+
+.fht{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form_headline{
+    color: var(--Accent-white, #F4F7FF);
+    font-family: "Helvetica Neue" sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 44px;
+}
+
+.form_text{
+    color: var(--Accent-white, #F4F7FF);
+    font-family: "Helvetica Neue";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    opacity: 0.8;
+}
+
+.form-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+input{
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    padding: 15px 110px 15px 20px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    width: 100%;
+    border-bottom: 1px solid rgba(244, 247, 255, 0.8);
+    color: #FFF;
+    font-family: "Helvetica Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form_button{
+    display: flex;
+    padding: 20px 148px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background: var(--Accent-white, #F4F7FF);
+    color: var(--Accent, #012AE4);
+    font-family: "Helvetica Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.24px;
+    cursor: pointer;
+}

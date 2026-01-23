@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/fonts/HelveticaNeueCyr-Roman.ttf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/fonts/HelveticaNeueCyr-Medium.ttf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gunterz';
+    src: url('/fonts/Gunterz-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+.event-card{
+    width: 675px;
+    height: 375px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: var(--Background-white, #F5F5F5);
+    padding: 11px;
+    position: relative;
+}
+
+.event-card_headline{
+    color: var(--Black, #121212);
+    font-family: "Helvetica Neue";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    max-width: 532px;
+    padding: 25px 0px 0px 50px;
+}
+
+.event-ld{
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+    padding-left: 50px;
+}
+
+.event_location{
+    color: rgba(18, 18, 18, 0.50);
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    padding-right: 18px;
+    background-image: url(../../public/img/tochka.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.event_date{
+    color: rgba(18, 18, 18, 0.50);
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.event-strelka{
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(../../public/img/strelka.svg);
+    bottom: 50px;
+    right: 70px;
+    transition: transform 0.2s ease;
+}
+
+.event-card:hover .event-strelka {
+    transform: translateX(15px);
+    transition: transform 0.2s ease;
+    background-image: url(../../public/img/strelka-hover.svg);
+}
