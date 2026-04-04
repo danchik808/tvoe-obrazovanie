@@ -103,7 +103,7 @@ export default function Home() {
         </section>
 
         <section className="home-rating">
-          <Link className="home-rating_headline" to="/rating">Рейтинг образовательных учреждений</Link>
+          <Link className="home-rating_headline" to="/rating">Рейтинг <span className="big-name">образовательных учреждений</span><span className="small-name">школ</span></Link>
           <div className="mini-rating">
             {featuredSchools.map(school => (
               <MiniSchool key={school.id} school={school} />

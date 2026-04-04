@@ -182,6 +182,21 @@ body {
     transition: 0.2s ease;
 }
 
+.home-rating_headline span{
+    color: var(--Black, #121212);
+    font-family: "Helvetica Neue";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 58px;
+    padding-right: 51px;
+}
+
+.home-rating_headline .small-name{
+    display: none;
+}
+
 .home-rating_headline:hover{
     max-width: 983px;
     padding-right: 80px;
