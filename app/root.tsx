@@ -29,6 +29,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/react-slick@0.30.2/dist/react-slick.min.js" as="script"></link>
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" as="style"></link>
         <Meta />
         <Links />
       </head>
