@@ -6,11 +6,12 @@ import Event from "../components/event";
 import { getAllSchools } from "../data/schools";
 import { getEvents } from "../data/events";
 import { Link } from "react-router";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./home.css";
+
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -24,6 +25,22 @@ export async function loader() {
 }
 
 export default function Home() {
+  const [showPage, setShowPage] = useState(false);
+
+  useEffect(() => {
+    const preloadResources = async () => {
+      await import("react-slick");
+      await import("./home.css");
+      await import("../components/header");
+      await import("../components/mini-school");
+      await import("../components/event");
+      await import("../components/footer");
+      setShowPage(true);
+    };
+
+    preloadResources();
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -37,39 +54,52 @@ export default function Home() {
   const featuredSchools = getAllSchools().slice(0, 4);
   const featuredEvents = getEvents().slice(0, 2);
 
+  if (!showPage) {
+    return (
+      <>
+        <div className="loading-screen">
+          <div className="spinner"></div>
+          <p>Предзагрузка...</p>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <Header />
       <main>
         <section className="slider">
-          <Slider {...settings}>
-            <div className="slider_item slider_item_1">
-              <div className="rpl">
-                <p className="slider_rating">1 в рейтинге</p>
-                <p className="slider_location">ВАО</p>
+          <Suspense fallback={<div className="slider-placeholder">Загрузка слайдера...</div>}>
+            <Slider {...settings}>
+              <div className="slider_item slider_item_1">
+                <div className="rpl">
+                  <p className="slider_rating">1 в рейтинге</p>
+                  <p className="slider_location">ВАО</p>
+                </div>
+                <h3 className="slider_headline">ШКОЛА №1502 "Энергия"</h3>
+                <p className="slider_text">Команда Школы №1502 старается сделать школу, в которой хотелось бы учиться самим.</p>
+                <button className="slider_button"><a href="/">Подробнее</a></button>
               </div>
-              <h3 className="slider_headline">ШКОЛА №1502 "Энергия"</h3>
-              <p className="slider_text">Команда Школы №1502 старается сделать школу, в которой хотелось бы учиться самим.</p>
-              <button className="slider_button"><a href="/">Подробнее</a></button>
-            </div>
-            <div className="slider_item slider_item_2">
-              <div className="rpl">
-                <p className="slider_rating">2 в рейтинге</p>
-                <p className="slider_location">ВАО</p>
+              <div className="slider_item slider_item_2">
+                <div className="rpl">
+                  <p className="slider_rating">2 в рейтинге</p>
+                  <p className="slider_location">ВАО</p>
+                </div>
+                <h3 className="slider_headline">ШКОЛА №444</h3>
+                <p className="slider_text">Школа живет своей обычной жизнью, и учителя, как и почти 60 лет назад стремятся научить и воспитать детей, приходящих учиться в школу № 444.</p>
+                <button className="slider_button"><a href="/">Подробнее</a></button>
               </div>
-              <h3 className="slider_headline">ШКОЛА №444</h3>
-              <p className="slider_text">Школа живет своей обычной жизнью, и учителя, как и почти 60 лет назад стремятся научить и воспитать детей, приходящих учиться в школу № 444.</p>
-              <button className="slider_button"><a href="/">Подробнее</a></button>
-            </div>
-            <div className="slider_item slider_item_3">
-              <div className="rpl">
-                <p className="slider_rating">3 в рейтинге</p>
-                <p className="slider_location">ВАО</p>
-              </div> <h3 className="slider_headline">ШКОЛА №2036</h3>
-              <p className="slider_text">Команда Школы №1502 старается сделать школу, в которой хотелось бы учиться самим.</p>
-              <button className="slider_button"><a href="/">Подробнее</a></button>
-            </div>
-          </Slider>
+              <div className="slider_item slider_item_3">
+                <div className="rpl">
+                  <p className="slider_rating">3 в рейтинге</p>
+                  <p className="slider_location">ВАО</p>
+                </div> <h3 className="slider_headline">ШКОЛА №2036</h3>
+                <p className="slider_text">Команда Школы №1502 старается сделать школу, в которой хотелось бы учиться самим.</p>
+                <button className="slider_button"><a href="/">Подробнее</a></button>
+              </div>
+            </Slider>
+          </Suspense>
         </section>
 
         <section className="home-rating">

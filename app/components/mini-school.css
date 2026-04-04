@@ -24,7 +24,7 @@
 
 .mini-school-link{
     display: flex;
-    width: 672px;
+    max-width: 672px;
     height: 167px;
     box-sizing: border-box;
     justify-content: space-between;
@@ -115,4 +115,10 @@
     transform: translateX(15px);
     transition: transform 0.2s ease;
     background-image: url(../../public/img/strelka-hover.svg);
+}
+
+@media screen and (max-width: 1300px) {
+    .mini-school_location{
+        display: none;
+    }
 }
