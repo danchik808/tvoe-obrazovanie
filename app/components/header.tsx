@@ -10,7 +10,7 @@ export default function Header({ logoTheme = 'dark' }: HeaderProps) {
   const isDark = logoTheme === 'dark';
   return (
     <div className="header">
-      <Link to="/"><img src={isDark ? "../../public/img/logo-dark.png" : "../../public/img/logo-light.png"} alt="Логотип" rel="/home"/></Link>
+      <Link to="/"><img src={isDark ? "/img/logo-dark.png" : "/img/logo-light.png"} alt="Логотип" rel="/home"/></Link>
       <nav className="navigation">
         <div className="container navigation-container">
           <div className="nav-links">

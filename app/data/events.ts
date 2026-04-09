@@ -12,28 +12,28 @@ export const events: Event[] = [
     eventName: "День открытых дверей в Школе №1502",
     location: "ВАО",
     date: "2024.03.15",
-    photo: "../../public/img/event.svg"
+    photo: "/img/event.svg"
   },
   {
     id: 2,
     eventName: "День открытых дверей в Школе №444",
     location: "ВАО",
     date: "2024.03.15",
-    photo: "../../public/img/event.svg"
+    photo: "/img/event.svg"
   },
   {
     id: 3,
     eventName: "День открытых дверей в Школе №444",
     location: "ВАО",
     date: "2024.03.15",
-    photo: "../../public/img/event.svg"
+    photo: "/img/event.svg"
   },
   {
     id: 4,
     eventName: "День открытых дверей в Школе №444",
     location: "ВАО",
     date: "2024.03.15",
-    photo: "../../public/img/event.svg"
+    photo: "/img/event.svg"
   },
 ];
 

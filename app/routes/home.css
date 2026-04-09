@@ -166,7 +166,6 @@ body {
 }
 
 .home-rating_headline{
-    display: flex;
     color: var(--Black, #121212);
     font-family: "Helvetica Neue";
     font-size: 48px;
@@ -190,7 +189,6 @@ body {
     font-weight: 500;
     line-height: 24px;
     margin-bottom: 58px;
-    padding-right: 51px;
 }
 
 .home-rating_headline .small-name{
@@ -253,6 +251,17 @@ body {
 @media (max-width: 1300px) {
   .slider_item{
     background-position: center;
+  }
+  .event-card_headline{
+    padding: 20px 0px 0px 30px;
+    max-width: 400px;
+  }
+  .event-ld{
+    padding-left: 30px;
+  }
+  .event-strelka{
+    bottom: 40px;
+    right: 50px;
   }
 }
 
