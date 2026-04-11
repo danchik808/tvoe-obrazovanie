@@ -298,4 +298,7 @@ body {
     .mini-rating {
         grid-template-columns: 1fr;
     }
+    .mini-events {
+        grid-template-columns: 1fr; 
+    }
 }

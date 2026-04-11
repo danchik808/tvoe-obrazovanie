@@ -131,7 +131,7 @@ span {
     }
 
     .header {
-        padding: 40px 20px 40px 20px;
+        padding: 40px 20px;
     }
 }
 
@@ -149,5 +149,20 @@ span {
     .burger_btn{
         width: 27px;
         height: 22px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .header-logo {
+        width: 173px;
+        height: 29px;
+    }
+    .burger_btn{
+        width: 22px;
+        height: 18px;
+    }
+
+    .header {
+        padding: 15px 15px;
     }
 }
