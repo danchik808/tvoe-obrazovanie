@@ -6,7 +6,77 @@
     font-display: swap;
 }
 
-.header{
+.header-logo {
+    width: 250px;
+    height: 42px;
+}
+
+.header-logo.logo-dark {
+    background-image: url(/img/logo-dark.png);
+    background-size: cover;
+    background-position: center center;
+}
+
+.header-logo.logo-light {
+    background-image: url(/img/logo-light.png);
+    background-size: cover;
+    background-position: center center;
+}
+
+.burger-navigation {
+    position: relative;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50vw;
+    height: 500px;
+    background-color: #cccccc;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom-left-radius: 30px;
+}
+
+.burger-navigation.active {
+    display: flex;
+}
+
+.burger_btn {
+    display: none;
+    width: 33px;
+    height: 27px;
+    background-image: url(/public/img/burger.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.burger-navigation_container {
+    display: flex;
+    padding: 40px 40px;
+}
+
+.burger-close_btn {
+    width: 30px;
+    height: 30px;
+    background-image: url(/public/img/burger-close.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.burger_nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.header {
     display: flex;
     flex-direction: row;
     margin: 0 auto;
@@ -17,13 +87,13 @@
     width: 100%;
 }
 
-.nav-links{
+.nav-links {
     display: flex;
     flex-direction: row;
     gap: 40px;
 }
 
-span{
+span {
     color: #000;
     font-family: "Helvetica Neue" sans-serif;
     font-size: 20px;
@@ -31,18 +101,53 @@ span{
     line-height: 24px;
 }
 
+
+
 @media (max-width: 1480px) {
-    .header{
+    .header {
         gap: 20px;
         padding: 40px 40px 60px 40px;
     }
 
 }
+
 @media (max-width: 1024px) {
-    .nav-links{
+    .nav-links {
         gap: 25px;
     }
-    .header a{
+
+    .header a {
         max-width: 250px;
+    }
+}
+
+@media (max-width: 850px) {
+    .navigation {
+        display: none;
+    }
+
+    .burger_btn {
+        display: flex;
+    }
+
+    .header {
+        padding: 40px 20px 40px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .burger-navigation {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 420px) {
+    .header-logo {
+        width: 204px;
+        height: 34px;
+    }
+    .burger_btn{
+        width: 27px;
+        height: 22px;
     }
 }
