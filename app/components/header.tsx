@@ -18,7 +18,7 @@ export default function Header({ logoTheme = 'dark' }: HeaderProps) {
     <div className="header">
       <Link to="/"><div className={`header-logo ${isDark ? 'logo-dark' : 'logo-light'}`}></div></Link>
       <div className="header-container">
-        <nav className="navigation"> 
+        <nav className="navigation">
           <div className="container navigation-container">
             <div className="nav-links">
               <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`} end>
@@ -39,22 +39,26 @@ export default function Header({ logoTheme = 'dark' }: HeaderProps) {
         <div className="burger">
           <button className="burger_btn" onClick={burger}></button>
           <nav className={`burger-navigation ${isActive ? 'active' : ''}`}>
-            <div className="burger-navigation_container">
-              <div className="burger_nav-links">
-                <NavLink to="/" className="buger_nav-link">
-                  <span>Главная</span>
-                </NavLink>
-                <NavLink to="/" className="buger_nav-link">
-                  <span>Рейтинг</span>
-                </NavLink>
-                <NavLink to="/" className="buger_nav-link">
-                  <span>Мероприятия</span>
-                </NavLink>
-                <NavLink to="/" className="buger_nav-link">
-                  <span>Контакты</span>
-                </NavLink>
+            <div className="burger_fon">
+              <div className="burger-navigation_container">
+                <div className="burger-inside">
+                  <div className="burger_nav-links">
+                    <NavLink to="/" className="buger_nav-link">
+                      <span>Главная</span>
+                    </NavLink>
+                    <NavLink to="/" className="buger_nav-link">
+                      <span>Рейтинг</span>
+                    </NavLink>
+                    <NavLink to="/" className="buger_nav-link">
+                      <span>Мероприятия</span>
+                    </NavLink>
+                    <NavLink to="/" className="buger_nav-link">
+                      <span>Контакты</span>
+                    </NavLink>
+                  </div>
+                  <button className="burger-close_btn" onClick={burger}></button>
+                </div>
               </div>
-              <button className="burger-close_btn" onClick={burger}></button>
             </div>
           </nav>
         </div>

@@ -24,7 +24,6 @@
 
 .mini-school-link{
     display: flex;
-    max-width: 672px;
     height: 167px;
     box-sizing: border-box;
     justify-content: space-between;

@@ -6,6 +6,10 @@
     font-display: swap;
 }
 
+header {
+    position: relative;
+}
+
 .header-logo {
     width: 250px;
     height: 42px;
@@ -23,22 +27,26 @@
     background-position: center center;
 }
 
-.burger-navigation {
-    position: relative;
-    display: none;
+.burger_fon {
     position: absolute;
-    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0px;
     top: 0;
-    width: 50vw;
-    height: 500px;
-    background-color: #cccccc;
     z-index: 1000;
-    box-sizing: border-box;
-    border-bottom-left-radius: 30px;
+}
+
+.burger-navigation {
+    display: none;
 }
 
 .burger-navigation.active {
     display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
 }
 
 .burger_btn {
@@ -53,27 +61,49 @@
 }
 
 .burger-navigation_container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60vw;
+    height: 500px;
+    background-color: #FFF;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom-left-radius: 30px;
+}
+
+.burger-inside {
     display: flex;
-    padding: 40px 40px;
+    padding: 70px 40px;
+    justify-content: center;
 }
 
 .burger-close_btn {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 26px;
     background-image: url(/public/img/burger-close.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     cursor: pointer;
     position: absolute;
-    top: 40px;
-    right: 40px;
+    top: 15px;
+    right: 30px;
 }
 
 .burger_nav-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    text-align: center;
+}
+
+.burger_nav-links span {
+    color: #000;
+    font-family: "Helvetica Neue" sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 24px;
 }
 
 .header {
@@ -136,7 +166,7 @@ span {
 }
 
 @media (max-width: 600px) {
-    .burger-navigation {
+    .burger-navigation-container {
         width: 60vw;
     }
 }
@@ -146,7 +176,8 @@ span {
         width: 204px;
         height: 34px;
     }
-    .burger_btn{
+
+    .burger_btn {
         width: 27px;
         height: 22px;
     }
@@ -157,7 +188,8 @@ span {
         width: 173px;
         height: 29px;
     }
-    .burger_btn{
+
+    .burger_btn {
         width: 22px;
         height: 18px;
     }
