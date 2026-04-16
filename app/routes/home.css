@@ -338,6 +338,9 @@ body {
 }
 
 @media (max-width: 650px) {
+    .slider {
+        margin-bottom: 87px;
+    }
     .slider_item{
         padding: 40px;
         background-image: none;
@@ -367,7 +370,15 @@ body {
         background-image: none;
         background-color: var(--Accent-white, #ECEEF5);
     }
-    
+    .home-rating_headline, .home-rating_headline span{
+        font-size: 42px;
+        max-width: 302px;
+        margin-bottom: 45px;
+    }
+
+    .home-rating_headline:hover{
+        max-width: 333px;
+    }
 }
 
 @media (max-width: 520px) {

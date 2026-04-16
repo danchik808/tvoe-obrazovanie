@@ -53,7 +53,7 @@ header {
     display: none;
     width: 33px;
     height: 27px;
-    background-image: url(/public/img/burger.png);
+    background-image: url(/img/burger.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -81,7 +81,7 @@ header {
 .burger-close_btn {
     width: 24px;
     height: 26px;
-    background-image: url(/public/img/burger-close.png);
+    background-image: url(/img/burger-close.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

@@ -83,7 +83,7 @@
     font-weight: 400;
     line-height: 24px;
     padding-left: 38px !important;
-    background-image: url(../../public/img/geo.svg);
+    background-image: url(/img/geo.svg);
     background-size: 18px 18px;
     background-repeat: no-repeat;
     background-position: left 15px center;
@@ -104,7 +104,7 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    background-image: url(../../public/img/strelka.svg);
+    background-image: url(/img/strelka.svg);
     bottom: 30px;
     right: 70px;
     transition: transform 0.2s ease;
@@ -113,11 +113,18 @@
 .mini-school-link:hover .strelka {
     transform: translateX(15px);
     transition: transform 0.2s ease;
-    background-image: url(../../public/img/strelka-hover.svg);
+    background-image: url(/img/strelka-hover.svg);
 }
 
 @media screen and (max-width: 1300px) {
     .mini-school_location{
         display: none;
     }
+}
+
+@media screen and (max-width: 650px) {
+    .mini-school-link{
+        background-color: var(--Accent-white, #ECEEF5);
+    }
+    
 }
