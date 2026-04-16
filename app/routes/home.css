@@ -363,14 +363,16 @@ body {
         padding: 12px 10px 12px 10px;
         background-image: none;
     }
+    .slider_item{
+        background-image: none;
+        background-color: var(--Accent-white, #EFF1F7);
+    }
     
 }
 
 @media (max-width: 520px) {
     .slider_item{
         padding: 20px;
-        background-image: none;
-        background-color: var(--Accent-white, #E3E8F5);
     }
     .rpl{
         padding-bottom: 35px;
