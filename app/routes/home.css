@@ -286,6 +286,10 @@ body {
 }
 
 @media (max-width: 1076px) {
+    .slider {
+        margin-bottom: 97px;
+    }
+
     .home-rating_headline .big-name {
         display: none;
     }
@@ -366,7 +370,7 @@ body {
     .slider_item{
         padding: 20px;
         background-image: none;
-        background-color: var(--Accent-white, #ECEEF5);
+        background-color: var(--Accent-white, #E3E8F5);
     }
     .rpl{
         padding-bottom: 35px;

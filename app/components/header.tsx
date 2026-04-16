@@ -46,13 +46,13 @@ export default function Header({ logoTheme = 'dark' }: HeaderProps) {
                     <NavLink to="/" className="buger_nav-link">
                       <span>Главная</span>
                     </NavLink>
-                    <NavLink to="/" className="buger_nav-link">
+                    <NavLink to="/rating" className="buger_nav-link">
                       <span>Рейтинг</span>
                     </NavLink>
-                    <NavLink to="/" className="buger_nav-link">
+                    <NavLink to="/events" className="buger_nav-link">
                       <span>Мероприятия</span>
                     </NavLink>
-                    <NavLink to="/" className="buger_nav-link">
+                    <NavLink to="/contacts" className="buger_nav-link">
                       <span>Контакты</span>
                     </NavLink>
                   </div>
