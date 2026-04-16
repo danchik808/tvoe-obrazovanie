@@ -366,7 +366,7 @@ body {
     .slider_item{
         padding: 20px;
         background-image: none;
-        background-color: var(--Accent-white, #F4F7FF);
+        background-color: var(--Accent-white, #ECEEF5);
     }
     .rpl{
         padding-bottom: 35px;
