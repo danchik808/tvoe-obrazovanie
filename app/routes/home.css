@@ -365,7 +365,7 @@ body {
     }
     .slider_item{
         background-image: none;
-        background-color: var(--Accent-white, #EFF1F7);
+        background-color: var(--Accent-white, #ECEEF5);
     }
     
 }
