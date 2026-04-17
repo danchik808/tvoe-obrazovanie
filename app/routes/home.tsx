@@ -3,14 +3,14 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import MiniSchool from "../components/mini-school";
 import Event from "../components/event";
-import { getAllSchools } from "../data/schools";
 import { getEvents } from "../data/events";
 import { Link } from "react-router";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./home.css";
+import { supabase } from "../lib/supabase";
 
 
 export function meta({ }: Route.MetaArgs) {
@@ -24,8 +24,17 @@ export async function loader() {
   return null;
 }
 
+export interface School {
+    id: number;
+    shortName: string;
+    shortDescription: string;
+    slug: string;
+    district: string;
+}
+
 export default function Home() {
   const [showPage, setShowPage] = useState(false);
+  const [featuredSchools, setFeaturedSchools] = useState<School[]>([]);
 
   useEffect(() => {
     const preloadResources = async () => {
@@ -35,7 +44,28 @@ export default function Home() {
       await import("../components/mini-school");
       await import("../components/event");
       await import("../components/footer");
-      setShowPage(true);
+      
+      async function fetchSchools() {
+        try {
+          const { data, error } = await supabase
+            .from("schools")
+            .select("id, shortName, shortDescription, slug, district")
+            .order("id", { ascending: true })
+            .limit(4);
+
+          if (!error && data) {
+            setFeaturedSchools(data);
+          } else if (error) {
+            console.error("Ошибка загрузки школ:", error);
+          }
+        } catch (err) {
+          console.error("Ошибка:", err);
+        } finally {
+          setShowPage(true);
+        }
+      }
+
+      await fetchSchools();
     };
 
     preloadResources();
@@ -51,7 +81,6 @@ export default function Home() {
     autoplaySpeed: 10000,
   };
 
-  const featuredSchools = getAllSchools().slice(0, 4);
   const featuredEvents = getEvents().slice(0, 2);
 
   if (!showPage) {

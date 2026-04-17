@@ -1,24 +1,37 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { supabase } from "~/lib/supabase"; // путь к твоему supabase клиенту
+import { supabase } from "../lib/supabase";
+import type { Route } from "./+types/school";
+
+export function meta({ }: Route.MetaArgs) {
+  return [
+    { title: `` },
+  ];
+}
+
+interface SchoolFromSupabase {
+  id: number;
+  shortName: string;
+  district: string;
+  shortDescription: string;
+  slug: string;  
+}
 
 export default function SchoolPage() {
-  const { id } = useParams(); // получаем id из URL
-  const [school, setSchool] = useState(null);
+  const { slug } = useParams();
+  const [school, setSchool] = useState<SchoolFromSupabase | null>(null);
 
   useEffect(() => {
-    // Запрос в Supabase по этому id
-    supabase.from("schools").select("*").eq("id", id).single()
+    supabase.from("schools").select("*").eq("slug", slug).single()
       .then(({ data }) => setSchool(data));
-  }, [id]);
-
+  }, [slug]);
   if (!school) return <div>Загрузка...</div>;
 
   return (
     <div>
-      <h1></h1>
-      <p></p>
-      <p></p>
+      <h1>{school.shortName}</h1>
+      <p>{school.shortDescription}</p>
+      <p>{school.district}</p>
     </div>
   );
 }
