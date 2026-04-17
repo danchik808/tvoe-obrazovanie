@@ -372,12 +372,12 @@ body {
     }
     .home-rating_headline, .home-rating_headline span{
         font-size: 42px;
-        max-width: 302px;
+        max-width: 328px;
         margin-bottom: 45px;
     }
 
     .home-rating_headline:hover{
-        max-width: 333px;
+        max-width: 357px;
     }
 }
 

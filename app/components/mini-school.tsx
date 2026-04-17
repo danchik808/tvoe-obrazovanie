@@ -8,7 +8,7 @@ interface MiniSchoolProps {
 
 export default function MiniSchool({ school }: MiniSchoolProps) {
     return (
-        <Link to="/" className="mini-school-link">
+        <Link to={`/school/${school.id}`} className="mini-school-link">
             <div className="hhl">
                 <div className="hh">
                     <h2 className="mini-school_number">№{school.id}</h2>

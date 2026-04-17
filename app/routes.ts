@@ -5,4 +5,5 @@ export default [
     route("contacts", "routes/contacts.tsx"),
     route("rating", "routes/rating.tsx"),
     route("events", "routes/events.tsx"),
+    route("school/:id", "routes/school.tsx"),
 ] satisfies RouteConfig;
