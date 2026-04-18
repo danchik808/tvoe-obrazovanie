@@ -1,0 +1,15 @@
+.loading{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+svg{
+    padding-bottom: 30px;
+}
+
+.loading_headline{
+    font-size: 22px;
+}
