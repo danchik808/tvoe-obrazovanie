@@ -2,10 +2,12 @@ import { useParams } from "react-router";
 import Header from "../components/header";
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import "./school.css"
 
 interface SchoolFromSupabase {
     id: number;
     shortName: string;
+    fullName: string;
     district: string;
     shortDescription: string;
     slug: string;
@@ -29,11 +31,12 @@ export default function SchoolPage() {
     if (!school) return <div>Загрузка...</div>;
 
     return (
-        <>
+        <div className="school">
             <Header logoTheme='light' />
+            <div className="wall">
+            </div>
             <div className="school-container">
-
-                <h1>{school.shortName}</h1>
+                <h1 className="school-main_name">{school.fullName}</h1>
                 <p>{school.shortDescription}</p>
                 <p>{school.district}</p>
 
@@ -44,6 +47,6 @@ export default function SchoolPage() {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     );
 }

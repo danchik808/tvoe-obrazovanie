@@ -15,7 +15,7 @@ export default function Header({ logoTheme = 'dark' }: HeaderProps) {
   const isDark = logoTheme === 'dark';
 
   return (
-    <div className="header">
+    <div className={`header ${isDark ? 'logo-dark' : 'logo-light'}`}>
       <Link to="/"><div className={`header-logo ${isDark ? 'logo-dark' : 'logo-light'}`}></div></Link>
       <div className="header-container">
         <nav className="navigation">
