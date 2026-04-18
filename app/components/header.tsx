@@ -21,16 +21,16 @@ export default function Header({ logoTheme = 'dark' }: HeaderProps) {
         <nav className="navigation">
           <div className="container navigation-container">
             <div className="nav-links">
-              <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`} end>
+              <NavLink to="/" className={`nav-link ${isDark ? 'logo-dark' : 'logo-light'}`} end>
                 <span>Главная</span>
               </NavLink>
-              <NavLink to="/rating" className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`} end>
+              <NavLink to="/rating" className={`nav-link ${isDark ? 'logo-dark' : 'logo-light'}`} end>
                 <span>Рейтинг</span>
               </NavLink>
-              <NavLink to="/events" className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`} end>
+              <NavLink to="/events" className={`nav-link ${isDark ? 'logo-dark' : 'logo-light'}`} end>
                 <span>Мероприятия</span>
               </NavLink>
-              <NavLink to="/contacts" className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`} end>
+              <NavLink to="/contacts" className={`nav-link ${isDark ? 'logo-dark' : 'logo-light'}`} end>
                 <span>Контакты</span>
               </NavLink>
             </div>

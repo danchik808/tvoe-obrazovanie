@@ -19,8 +19,12 @@
     font-style: normal;
 }
 
-.header.logo-light{
-    padding-bottom: 245px;
+.header {
+    z-index: 1;
+}
+
+.header.logo-light {
+    margin-bottom: 180px;
 }
 
 .school {
@@ -34,8 +38,9 @@
 .wall {
     display: flex;
     position: absolute;
+    flex-direction: row;
     max-width: 1886px;
-    max-height: 400px;
+    max-height: 300px;
     height: 100%;
     background-image: url(/img/wall.png);
     background-size: cover;
@@ -46,16 +51,6 @@
     top: 17px;
     left: 17px;
     right: 17px;
-}
-
-.school-main_name {
-    color: var(--Background-white, #F5F5F5);
-    font-family: Gunterz;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
-    z-index: 2;
 }
 
 .wall::before {
@@ -72,10 +67,6 @@
     z-index: 1;
 }
 
-.header {
-    z-index: 1;
-}
-
 .school-container {
     display: flex;
     z-index: 100;
@@ -85,18 +76,214 @@
     margin: 0 auto;
 }
 
-@media (max-width: 1600px) {
-    .wall{
-        height: 19vw;
+.school_nr {
+    display: flex;
+    flex-direction: row;
+    max-width: 1405px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 35px;
+    gap: 15px;
+}
+
+.school_main-name {
+    display: flex;
+    color: var(--Background-white, #F5F5F5);
+    font-family: Gunterz;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px;
+    z-index: 2;
+}
+
+.school_main-rating {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px 10px 38px;
+    background-image: url(/img/star2.svg);
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+    box-sizing: border-box;
+    border-radius: 40px;
+    background-color: #012AE4;
+    color: var(--Background-white, #F5F5F5);
+    font-family: "Helvetica Neue" sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    z-index: 2;
+    max-height: 38px;
+}
+
+.school_general {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 97px;
+}
+
+.school_profile {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 97px;
+}
+
+.school_order {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 97px;
+}
+
+.school_society{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 97px;
+}
+
+
+.school_section-headline {
+    color: var(--Black, #121212);
+    font-family: Gunterz;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+.school_blocks {
+    display: flex;
+    flex-direction: row;
+    gap: 23px;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.school_block {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    min-width: 600px;
+    padding: 40px 30px;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+    border-radius: 30px;
+    background: var(--Background-white, #F5F5F5);
+}
+
+.school_block:nth-child(1) {
+    background: var(--Accent, #012AE4);
+}
+
+.school_block-headline {
+    color: rgba(18, 18, 18, 0.80);
+    font-family: "Helvetica Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.school_block-one .school_block-headline {
+    color: rgba(245, 245, 245, 0.80);
+}
+
+.school_block-text {
+    color: var(--Black, #121212);
+    font-family: "Helvetica Neue";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.school_block-one .school_block-text {
+    color: var(--Background-white, #F5F5F5);
+}
+
+.hpd {
+    padding-left: 45px;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+.school_block:nth-child(1) .hpd {
+    background-image: url(/img/geo2.svg);
+}
+
+.school_block:nth-child(2) .hpd {
+    background-image: url(/img/website.svg);
+}
+
+.school_block:nth-child(3) .hpd {
+    background-image: url(/img/students.svg);
+}
+
+.mini_blocks{
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.mini_block {
+    display: flex;
+    padding: 0px 30px;
+    margin: 10px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    border-left: 2px solid #012AE4;
+}
+
+.mini_block-headline {
+    color: rgba(18, 18, 18, 0.80);
+    font-family: "Helvetica Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.mini_block-text {
+    color: #121212;
+    font-family: "Helvetica Neue";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+@media (max-width: 1625px) {
+    .wall {
+        height: 20vw;
     }
-    .header.logo-light{
-        padding-bottom: 8vw;
+
+    .header.logo-light {
+        padding-bottom: 10vw;
+    }
+
+    .school-container {
+        margin: 0;
+        padding: 0 110px;
+    }
+
+    .school_main-name {
+        padding: 0px 93px 40px 93px;
+        margin: 0;
     }
 }
 
 @media (max-width: 1480px) {
-    .school-container{
-        padding: 40px;
-        margin: 0;
+    .school-container {
+        padding: 0 40px;
+    }
+
+    .school_main-name {
+        padding: 0px 23px 40px 23px;
     }
 }

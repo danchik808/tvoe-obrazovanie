@@ -11,7 +11,7 @@ header {
 }
 
 .header-logo {
-    width: 250px;
+    width: 256px;
     height: 42px;
 }
 
@@ -131,7 +131,9 @@ span {
     line-height: 24px;
 }
 
-
+.nav-link.logo-light span{
+    color: #FFF;
+}
 
 @media (max-width: 1480px) {
     .header {
