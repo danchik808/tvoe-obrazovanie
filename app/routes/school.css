@@ -24,7 +24,7 @@
 }
 
 .header.logo-light {
-    margin-bottom: 180px;
+    margin-bottom: 10vw;
 }
 
 .school {
@@ -46,7 +46,7 @@
     background-size: cover;
     background-position: top center;
     z-index: 0;
-    border-radius: 40px;
+    border-radius: 2.083vw;
     align-items: flex-end;
     top: 17px;
     left: 17px;
@@ -62,7 +62,7 @@
     height: 50%;
     /* высота градиента */
     background: linear-gradient(180deg, rgba(1, 42, 228, 0.00) 0%, #012AE4 100%);
-    border-radius: 0 0 40px 40px;
+    border-radius: 0 0 2.083vw 2.083vw;
     pointer-events: none;
     z-index: 1;
 }
@@ -82,95 +82,99 @@
     max-width: 1405px;
     width: 100%;
     margin: 0 auto;
-    padding-bottom: 35px;
-    gap: 15px;
+    padding-bottom: 1.823vw;
+    gap: 0.781vw;
 }
 
 .school_main-name {
     display: flex;
     color: var(--Background-white, #F5F5F5);
     font-family: Gunterz;
-    font-size: 48px;
+    font-size: 2.5vw;
     font-style: normal;
     font-weight: 500;
-    line-height: 48px;
+    line-height: 2.5vw;
     z-index: 2;
 }
 
 .school_main-rating {
     display: flex;
     align-items: center;
-    padding: 10px 15px 10px 38px;
+    padding: 0.521vw 0.781vw 0.521vw 1.979vw;
     background-image: url(/img/star2.svg);
-    background-size: 18px 18px;
+    background-size: 0.938vw;
     background-repeat: no-repeat;
-    background-position: left 15px center;
+    background-position: left 0.781vw center;
     box-sizing: border-box;
-    border-radius: 40px;
+    border-radius: 2.083vw;
     background-color: #012AE4;
     color: var(--Background-white, #F5F5F5);
     font-family: "Helvetica Neue" sans-serif;
-    font-size: 18px;
+    font-size: 0.938vw;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.25vw;
     z-index: 2;
-    max-height: 38px;
+    max-height: 1.979vw;
 }
 
 .school_general {
     display: flex;
     flex-direction: column;
-    margin-bottom: 97px;
+    margin-bottom: 5.052vw;
 }
 
 .school_profile {
     display: flex;
     flex-direction: column;
-    margin-bottom: 97px;
+    margin-bottom: 5.052vw;
 }
 
 .school_order {
     display: flex;
     flex-direction: column;
-    margin-bottom: 97px;
+    margin-bottom: 5.052vw;
 }
 
 .school_society{
     display: flex;
     flex-direction: column;
-    margin-bottom: 97px;
+    margin-bottom: 5.052vw;
 }
 
 
 .school_section-headline {
     color: var(--Black, #121212);
     font-family: Gunterz;
-    font-size: 36px;
+    font-size: 1.875vw;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px;
-    margin-bottom: 30px;
+    line-height: 1.875vw;
+    margin-bottom: 1.563vw;
 }
 
 .school_blocks {
     display: flex;
     flex-direction: row;
-    gap: 23px;
-    overflow: hidden;
-    overflow-x: scroll;
+    gap: 1.198vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 0 calc(-50vw + 50%);
+    padding: 0 calc(50vw - 50%);
 }
 
 .school_block {
     display: flex;
     flex-direction: column;
-    height: 200px;
-    min-width: 600px;
-    padding: 40px 30px;
+    height: 10.417vw;
+    min-width: 33.594vw;
+    padding: 2.083vw 1.563vw;
     align-items: flex-start;
     justify-content: center;
-    gap: 15px;
-    border-radius: 30px;
+    gap: 0.781vw;
+    border-radius: 1.563vw;
     background: var(--Background-white, #F5F5F5);
 }
 
@@ -181,11 +185,11 @@
 .school_block-headline {
     color: rgba(18, 18, 18, 0.80);
     font-family: "Helvetica Neue";
-    font-size: 24px;
+    font-size: 1.25vw;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 10px;
+    line-height: 1.25vw;
+    margin-bottom: 0.521vw;
 }
 
 .school_block-one .school_block-headline {
@@ -195,10 +199,10 @@
 .school_block-text {
     color: var(--Black, #121212);
     font-family: "Helvetica Neue";
-    font-size: 32px;
+    font-size: 1.667vw;
     font-style: normal;
     font-weight: 400;
-    line-height: 32px;
+    line-height: 1.667vw;
 }
 
 .school_block-one .school_block-text {
@@ -206,9 +210,10 @@
 }
 
 .hpd {
-    padding-left: 45px;
+    padding-left: 2.344vw;
     background-repeat: no-repeat;
     background-position: left top;
+    background-size: 1.563vw;
 }
 
 .school_block:nth-child(1) .hpd {
@@ -226,36 +231,36 @@
 .mini_blocks{
     display: flex;
     flex-direction: column;
-    gap: 26px;
+    gap: 1.354vw;
 }
 
 .mini_block {
     display: flex;
-    padding: 0px 30px;
-    margin: 10px 0px;
+    padding: 0 1.563vw;
+    margin: 0.521vw 0;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 15px;
+    gap: 0.781vw;
     border-left: 2px solid #012AE4;
 }
 
 .mini_block-headline {
     color: rgba(18, 18, 18, 0.80);
     font-family: "Helvetica Neue";
-    font-size: 24px;
+    font-size: 1.25vw;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.25vw;
 }
 
 .mini_block-text {
     color: #121212;
     font-family: "Helvetica Neue";
-    font-size: 32px;
+    font-size: 1.667vw;
     font-style: normal;
     font-weight: 500;
-    line-height: 32px;
+    line-height: 1.667vw;
 }
 
 @media (max-width: 1625px) {
@@ -264,7 +269,7 @@
     }
 
     .header.logo-light {
-        padding-bottom: 10vw;
+        padding-bottom: 8vw;
     }
 
     .school-container {
@@ -272,9 +277,9 @@
         padding: 0 110px;
     }
 
-    .school_main-name {
-        padding: 0px 93px 40px 93px;
+    .school_nr{
         margin: 0;
+        padding: 20px 93px;
     }
 }
 
@@ -283,7 +288,8 @@
         padding: 0 40px;
     }
 
-    .school_main-name {
-        padding: 0px 23px 40px 23px;
+    .school_nr{
+        margin: 0;
+        padding: 20px 23px;
     }
 }

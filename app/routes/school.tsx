@@ -19,6 +19,8 @@ interface SchoolFromSupabase {
     profiles: any[];
     order: any[];
     society: any[];
+    contacts: any[];
+    achievements: any[];
 }
 
 export default function SchoolPage() {
@@ -56,18 +58,18 @@ export default function SchoolPage() {
                                 <p className="school_block-text">{school.address}</p>
                             </div>
                         </Link>
-                        <Link to="/" className="school_block">
+                        <Link to={`${school.website}`} target="_blank" rel="noopener noreferrer" className="school_block">
                             <div className="hpd">
                                 <p className="school_block-headline">Сайт школы</p>
                                 <p className="school_block-text">{school.website}</p>
                             </div>
                         </Link>
-                        <Link to="/" className="school_block">
+                        <div className="school_block">
                             <div className="hpd">
                                 <p className="school_block-headline">Свободные места</p>
                                 <p className="school_block-text">{school.studentCount}</p>
                             </div>
-                        </Link>
+                        </div>
                     </div>
                 </section>
                 <section className="school_profile">
@@ -86,7 +88,7 @@ export default function SchoolPage() {
                     <div className="mini_blocks">
                         {school.order && school.order.map((item, index) => (
                             <div key={index} className="mini_block">
-                                <p className="mini_block-text">{item}</p>
+                                <p className="mini_block-text" style={{ whiteSpace: 'pre-wrap' }}>{item}</p>
                             </div>
                         ))}
                     </div>
@@ -98,6 +100,32 @@ export default function SchoolPage() {
                             <div key={index} className="mini_block">
                                 <h3 className="mini_block-headline">{item.name}</h3>
                                 <p className="mini_block-text">{item.society}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+                <section className="school_general school_contacts">
+                    <h2 className="school_section-headline">Контакты</h2>
+                    <div className="school_blocks">
+                        {school.contacts && school.contacts.map((item, index) => (
+                            <div className="school_block" key={index}>
+                                <div className="hpd">
+                                    <p className="school_block-headline" style={{ whiteSpace: 'pre-wrap', lineHeight: '1.2' }}>{item.name}</p>
+                                    <p className="school_block-text">{item.contact}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+                <section className="school_general school_achievements">
+                    <h2 className="school_section-headline">Достижения</h2>
+                    <div className="school_blocks">
+                        {school.achievements && school.achievements.map((item, index) => (
+                            <div className="school_block" key={index}>
+                                <div className="hpd">
+                                    <p className="school_block-headline">{item.name}</p>
+                                    <p className="school_block-text">{item.achievement}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
