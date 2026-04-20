@@ -122,9 +122,75 @@
     }
 }
 
+@media (max-width: 1200px) and (min-width: 769px) {
+    .strelka {
+        display: none;
+    }
+
+    .mini-school-link {
+        padding: 10px 10px 20px 30px;
+        height: auto;
+        border-radius: 30px;
+    }
+
+    .mini-school_headline {
+        font-size: 22px;
+    }
+
+    .mini-school_number {
+        font-size: 18px;
+        line-height: 36px;
+    }
+}
+
 @media screen and (max-width: 650px) {
     .mini-school-link{
         background-color: var(--Accent-white, #ECEEF5);
     }
-    
+}
+
+@media (max-width: 576px) {
+    .strelka{
+        width: 30px;
+        height: 30px;
+        right: 40px;
+        background-size: cover;
+    }
+    .mini-school-link{
+        padding: 20px 30px;
+        height: auto;
+        border-radius: 30px;
+    }
+
+    .mini-school_headline {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    .mini-school_text{
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .mini-school_number {
+        font-size: 15px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .strelka{
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .mini-school_headline {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .mini-school_text{
+        font-size: 15px;
+    }
 }

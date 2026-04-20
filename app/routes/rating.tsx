@@ -76,7 +76,7 @@ export default function Rating() {
             <Header />
             <main className="rating_main">
                 <div className="rating-container">
-                    <h2 className="rating_headline">Рейтинг образовательных учреждений</h2>
+                    <h2 className="rating_headline">Рейтинг <span className="big-name">образовательных учреждений</span><span className="small-name">школ</span></h2>
                     <section className="rating">
                         {visibleSchools.map(school => (
                             <MiniSchool key={school.id} school={school} />

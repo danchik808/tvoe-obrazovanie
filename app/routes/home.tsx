@@ -118,15 +118,15 @@ export default function Home() {
           <Suspense fallback={<div className="slider-loading">Загрузка слайдера...</div>}>
             <Slider {...settings}>
               {slides && slides.map((item, index) => (
-                  <div key={index} className="slider_item" style={{ backgroundImage: 'url(${item.image})' }}>
+                <div key={index}>
+                  <div className="slider_item" style={{ backgroundImage: `url(${item.image})` }}>
                     <h3 className="slider_headline" style={{ whiteSpace: 'pre-wrap' }}>{item.headline?.replace(/\\n/g, '\n')}</h3>
                     <p className="slider_text">{item.text}</p>
                     <button className="slider_button"><a href="/">{item.button}</a></button>
                   </div>
+                  </div>
                 )
               )}
-              <div className="slider_item umskul">
-              </div>
             </Slider>
           </Suspense>
         </section>
