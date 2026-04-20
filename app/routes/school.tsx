@@ -21,6 +21,7 @@ interface SchoolFromSupabase {
     society: any[];
     contacts: any[];
     achievements: any[];
+    pro: any[];
 }
 
 export default function SchoolPage() {
@@ -75,7 +76,7 @@ export default function SchoolPage() {
                 <section className="school_profile">
                     <h2 className="school_section-headline">Профили классов</h2>
                     <div className="mini_blocks">
-                        {school.profiles && school.profiles.map((item, index) => (
+                        {school.pro && school.pro.map((item, index) => (
                             <div key={index} className="mini_block">
                                 <h3 className="mini_block-headline">{item.name}</h3>
                                 <p className="mini_block-text">{item.profiles}</p>

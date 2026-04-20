@@ -3,7 +3,6 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import MiniSchool from "../components/mini-school";
 import Event from "../components/event";
-import { getEvents } from "../data/events";
 import { Link } from "react-router";
 import { Suspense, useEffect, useState } from "react";
 import Slider from "react-slick";
@@ -31,6 +30,15 @@ export interface School {
   district: string;
 }
 
+export interface Event {
+  id: number;
+  eventName: string;
+  location: string;
+  photo: string;
+  date: string;
+  link: string;
+}
+
 interface SlideFromSupabase {
   headline: string;
   text: string;
@@ -41,6 +49,7 @@ interface SlideFromSupabase {
 export default function Home() {
   const [showPage, setShowPage] = useState(false);
   const [featuredSchools, setFeaturedSchools] = useState<School[]>([]);
+  const [featuredEvents, setFeaturedEvents] = useState<Event[]>([]);
   const [slides, setSlides] = useState<SlideFromSupabase[]>([]);
 
   useEffect(() => {
@@ -52,7 +61,7 @@ export default function Home() {
       await import("../components/event");
       await import("../components/footer");
 
-      async function fetchSchools() {
+      async function fetch() {
         try {
           const { data: schoolsData, error: schoolsError } = await supabase
             .from("schools")
@@ -74,6 +83,18 @@ export default function Home() {
           if (!slidesError && slidesData) {
             setSlides(slidesData);
           }
+
+          const { data: eventsData, error: eventsError } = await supabase
+            .from("events")
+            .select("*")
+            .order("id", { ascending: true })
+            .limit(2);
+
+          if (!eventsError && eventsData) {
+            setFeaturedEvents(eventsData);
+          } else if (eventsError) {
+            console.error("Ошибка загрузки мероприятий:", eventsError);
+          }
         } catch (err) {
           console.error("Ошибка:", err);
         } finally {
@@ -81,7 +102,7 @@ export default function Home() {
         }
       }
 
-      await fetchSchools();
+      await fetch();
     };
     preloadResources();
   }, []);
@@ -95,8 +116,6 @@ export default function Home() {
     autoplay: true,
     autoplaySpeed: 7000,
   };
-
-  const featuredEvents = getEvents().slice(0, 2);
 
   if (!showPage) {
     return (
@@ -124,8 +143,8 @@ export default function Home() {
                     <p className="slider_text">{item.text}</p>
                     <button className="slider_button"><a href="/">{item.button}</a></button>
                   </div>
-                  </div>
-                )
+                </div>
+              )
               )}
             </Slider>
           </Suspense>

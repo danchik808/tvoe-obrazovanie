@@ -64,17 +64,15 @@ header {
     position: absolute;
     right: 0;
     top: 0;
-    width: 60vw;
-    height: 500px;
+    width: 70vw;
+    height: 100vh;
     background-color: #FFF;
     z-index: 1000;
-    box-sizing: border-box;
-    border-bottom-left-radius: 30px;
 }
 
 .burger-inside {
     display: flex;
-    padding: 70px 40px;
+    padding: 90px 40px;
     justify-content: center;
 }
 
@@ -87,14 +85,14 @@ header {
     background-size: cover;
     cursor: pointer;
     position: absolute;
-    top: 15px;
-    right: 30px;
+    top: 40px;
+    right: 20px;
 }
 
 .burger_nav-links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     text-align: center;
 }
 
@@ -112,7 +110,7 @@ header {
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    padding: 65px 110px 101px 110px;
+    padding: 65px 110px 65px 110px;
     max-width: 1920px;
     width: 100%;
 }
@@ -129,6 +127,11 @@ span {
     font-size: 20px;
     font-weight: 500;
     line-height: 24px;
+}
+
+span:hover, .nav-link.logo-light span:hover {
+    color: #012AE4;
+    transition: 0.1s ease-in-out;
 }
 
 .nav-link.logo-light span{
@@ -182,6 +185,15 @@ span {
     .burger_btn {
         width: 27px;
         height: 22px;
+    }
+}
+
+@media (max-width: 400px) {
+    .burger_nav-links{
+        gap: 15px;
+    }
+    .burger_nav-links span{
+        font-size: 18px;
     }
 }
 

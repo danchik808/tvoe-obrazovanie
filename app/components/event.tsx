@@ -1,13 +1,21 @@
 import "./event.css";
-import type { Event } from "../data/events";
+
+interface EventFromSupabase {
+  id: number;
+  eventName: string;
+  location: string;
+  photo: string;
+  date: string;  
+  link: string;
+}
 
 interface EventProps {
-    event: Event;
+    event: EventFromSupabase;
 }
 
 export default function Event({ event }: EventProps) {
     return (
-        <a href="" className="event-card">
+        <a href={event.link} target="_blank" className="event-card">
             <img src={event.photo} alt="event-photo" className="event_photo" />
             <h2 className="event-card_headline">{event.eventName}</h2>
             <div className="event-ld"> 

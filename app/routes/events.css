@@ -37,17 +37,16 @@ body {
 .events-container {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
     max-width: 1920px;
-    flex: 1 0 auto;
 }
 
 .events_main {
     display: flex;
     flex-direction: column;
-    max-width: 1370px;
+    max-width: 1260px;
     margin: 0 auto;
     width: 100%;
+    margin-bottom: 40px;
 }
 
 .events_headline {
@@ -64,8 +63,9 @@ body {
 .events {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 26px;
-    padding-bottom: 40px;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
 }
 
 .load_button {
@@ -76,4 +76,39 @@ body {
     cursor: pointer;
     border: 1px solid #012AE4;
     align-self: center;
+}
+
+@media (max-width: 1480px) {
+    .events_main {
+        padding: 0 40px;
+        max-width: 100%;
+    }
+}
+@media (max-width: 1076px) {
+    .events_headline {
+        font-size: 40px;
+        max-width: 315px;
+        margin-bottom: 36px;
+        background-size: 30px;
+    }
+}
+@media (max-width: 850px) {
+    .events_main {
+        padding: 0 20px;
+        max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .events {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+@media (max-width: 380px) {
+    .home-events_headline{
+        margin-bottom: 20px;
+        font-size: 32px;
+        line-height: 32px;
+    }
 }

@@ -4,23 +4,51 @@ import { useState, useEffect } from 'react';
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Event from "../components/event";
-import { getEvents } from '../data/events';
+import { supabase } from "../lib/supabase";
 
 export function meta({ }: Route.MetaArgs) {
     return [
         { title: "Твоё образование | Мероприятия" },
-        { name: "description", content: "Welcome to React Router!" },
     ];
+}
+
+export interface Event {
+    id: number;
+    eventName: string;
+    location: string;
+    photo: string;
+    date: string;
+    link: string;
 }
 
 export default function Events() {
     const [visibleCountEvents, setVisibleCountEvents] = useState(2);
-    const allEvents = getEvents();
+    const [allEvents, setAllEvents] = useState<Event[]>([]);
     const visibleEvents = allEvents.slice(0, visibleCountEvents);
     const loadMore = () => {
         setVisibleCountEvents(prev => prev + 2);
     };
     const canLoadMore = visibleCountEvents < allEvents.length;
+    useEffect(() => {
+        async function fetchEvents() {
+            try {
+                const { data, error } = await supabase
+                    .from("events")
+                    .select("id, eventName, location, photo, date, link")
+                    .order("id", { ascending: true });
+
+                if (!error && data) {
+                    setAllEvents(data);
+                } else if (error) {
+                    console.error("Ошибка загрузки мероприятий:", error);
+                }
+            } catch (err) {
+                console.error("Ошибка:", err);
+            }
+        }
+
+        fetchEvents();
+    }, []);
 
     return (
         <>

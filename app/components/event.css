@@ -22,7 +22,7 @@
     font-display: swap;
 }
 
-.event-card{
+.event-card {
     max-width: 675px;
     max-height: 375px;
     flex-shrink: 0;
@@ -32,25 +32,29 @@
     position: relative;
 }
 
-.event-card_headline{
+.event_photo{
+    width: 100%;
+}
+
+.event-card_headline {
     color: var(--Black, #121212);
     font-family: "Helvetica Neue";
     font-size: 32px;
     font-style: normal;
     font-weight: 500;
     line-height: 32px;
-    max-width: 532px;
+    max-width: 470px;
     padding: 25px 0px 0px 50px;
 }
 
-.event-ld{
+.event-ld {
     display: flex;
     flex-direction: row;
     gap: 11px;
     padding-left: 50px;
 }
 
-.event_location{
+.event_location {
     color: rgba(18, 18, 18, 0.50);
     font-family: "Helvetica Neue";
     font-size: 16px;
@@ -63,7 +67,7 @@
     background-position: right center;
 }
 
-.event_date{
+.event_date {
     color: rgba(18, 18, 18, 0.50);
     font-family: "Helvetica Neue";
     font-size: 16px;
@@ -72,7 +76,7 @@
     line-height: 32px;
 }
 
-.event-strelka{
+.event-strelka {
     display: block;
     position: absolute;
     width: 40px;
@@ -87,4 +91,74 @@
     transform: translateX(15px);
     transition: transform 0.2s ease;
     background-image: url(/img/strelka-hover.svg);
+}
+
+.event-card_headline {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+@media (max-width: 1300px) {
+    .event-strelka {
+        bottom: 40px;
+        right: 50px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    .event-card_headline {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 1140px) and (min-width: 768px) {
+    .event-strelka {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .event-card {
+        max-width: 100%;
+    }
+
+    .event-card_headline {
+        padding: 20px 0 0 20px !important;
+    }
+
+    .event-ld {
+        padding-left: 20px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .event-card_headline {
+        font-size: 24px;
+    }
+
+    .event-card_headline {
+        max-width: 350px !important;
+    }
+}
+
+@media (max-width: 520px) {
+    .event-strelka {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .event-card_headline {
+        font-size: 20px;
+        line-height: 20px;
+        padding: 15px 15px 0 15px !important;
+        max-width: 100%;
+    }
+    .event-ld{
+        padding-left: 15px !important;
+    }
 }
