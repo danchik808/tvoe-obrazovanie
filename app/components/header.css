@@ -60,6 +60,10 @@ header {
     cursor: pointer;
 }
 
+.burger_btn.logo-light{
+    background-image: url(/img/urger-light.png);
+}
+
 .burger-navigation_container {
     position: absolute;
     right: 0;
@@ -69,6 +73,7 @@ header {
     background-color: #FFF;
     z-index: 1000;
 }
+
 
 .burger-inside {
     display: flex;
@@ -102,6 +107,10 @@ header {
     font-size: 22px;
     font-weight: 500;
     line-height: 24px;
+}
+
+.burger_nav-link a{
+    display: block;
 }
 
 .header {

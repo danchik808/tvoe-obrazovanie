@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import MiniSchool from "../components/mini-school";
 import "./rating.css";
 import { supabase } from "../lib/supabase";
+import Loading from "../components/loading";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -204,18 +205,7 @@ export default function Rating() {
     };
 
     if (loading) {
-        return (
-            <>
-                <Header />
-                <main className="rating_main">
-                    <div className="rating-container">
-                        <h2 className="rating_headline">Рейтинг образовательных учреждений</h2>
-                        <div className="loading-spinner">Загрузка...</div>
-                    </div>
-                </main>
-                <Footer />
-            </>
-        );
+        return (<Loading />);
     }
 
     return (

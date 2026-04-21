@@ -37,7 +37,7 @@ export default function Header({ logoTheme = 'dark' }: HeaderProps) {
           </div>
         </nav>
         <div className="burger">
-          <button className="burger_btn" onClick={burger}></button>
+          <button className={`burger_btn ${isDark ? 'logo-dark' : 'logo-light'}`} onClick={burger}></button>
           <nav className={`burger-navigation ${isActive ? 'active' : ''}`}>
             <div className="burger_fon">
               <div className="burger-navigation_container">

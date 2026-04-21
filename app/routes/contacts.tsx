@@ -1,17 +1,34 @@
 import type { Route } from "./+types/home";
 import { Form } from "react-router";
+import { useEffect, useState } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "./contacts.css";
+import Loading from "../components/loading";
 
 export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "Твоё образование | Контакты" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Твоё образование | Контакты" }
   ];
 }
 
 export default function Contacts() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <Loading />
+    );
+  }
+
   return (
     <>
       <Header />
@@ -26,7 +43,7 @@ export default function Contacts() {
                 <h3 className="contacts-link_headline">tvoeobrazov@yandex.ru</h3>
                 <div className="contacts_strelka"></div>
               </a>
-              <a className="contacts-link" href="">
+              <a className="contacts-link" href="https://t.me/tvoe_obrazovanie_web" target="_blank" rel="noopener noreferrer">
                 <p className="contacts-link_text">Напишите нам в телеграм</p>
                 <h3 className="contacts-link_headline">@tvoeobrazovanie</h3>
                 <div className="contacts_strelka"></div>

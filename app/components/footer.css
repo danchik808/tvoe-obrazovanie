@@ -47,28 +47,7 @@ body {
     line-height: 24px;
 }
 
-.footer_item:hover:nth-child(1) {
-    color: #111;
-    text-decoration: underline;
-    transition: ease-in-out 0.3s;
-}
-
-.footer_item:hover:nth-child(3) {
-    color: #111;
-    text-decoration: underline;
-    transition: 0.3s;
-}
-
 @media (max-width: 850px) {
-    .footer_item {
-        text-decoration: underline;
-    }
-
-    .footer_item:nth-child(2) {
-        text-decoration: none;
-    }
-
-
     .footer {
         padding: 20px;
         gap: 30px;
@@ -90,10 +69,6 @@ body {
 }
 
 @media (max-width: 490px) {
-    .footer_item:nth-child(2) {
-        display: none;
-    }
-
     .footer {
         flex-direction: column;
         gap: 5px;

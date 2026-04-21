@@ -69,7 +69,6 @@
 
 .school-container {
     display: flex;
-    z-index: 100;
     max-width: 1405px;
     width: 100%;
     flex-direction: column;
@@ -199,6 +198,14 @@
     color: rgba(245, 245, 245, 0.80);
 }
 
+.school_block:nth-child(1) .school_block-headline {
+    color: rgba(245, 245, 245, 0.80);
+}
+
+.school_block:nth-child(1) .school_block-text {
+    color: var(--Background-white, #F5F5F5);
+}
+
 .school_block-text {
     color: var(--Black, #121212);
     font-family: "Helvetica Neue";
@@ -219,16 +226,28 @@
     background-size: 24px;
 }
 
-.school_block:nth-child(1) .hpd {
+.sg .school_block:nth-child(1) .hpd {
     background-image: url(/img/geo2.svg);
 }
 
-.school_block:nth-child(2) .hpd {
+.sg .school_block:nth-child(2) .hpd {
     background-image: url(/img/website.svg);
 }
 
-.school_block:nth-child(3) .hpd {
+.sg .school_block:nth-child(3) .hpd {
     background-image: url(/img/students.svg);
+}
+
+.school_contacts .school_block:nth-child(1) .hpd {
+    background-image: url(/img/mail.svg);
+}
+
+.school_contacts .school_block:nth-child(2) .hpd {
+    background-image: url(/img/phone.svg);
+}
+
+.school_contacts .school_block:nth-child(3) .hpd {
+    background-image: url(/img/phone.svg);
 }
 
 .mini_blocks {
@@ -264,6 +283,10 @@
     font-style: normal;
     font-weight: 500;
     line-height: 24px;
+}
+
+.school_achievements .hpd{
+    padding: 0;
 }
 
 @media (max-width: 1625px) {
@@ -462,6 +485,9 @@
         font-size: 20px;
         line-height: 20px;
     }
+    .school_general, .ld{
+        margin-bottom: 60px;
+    }
 }
 
 @media (max-width:600px) {
@@ -482,10 +508,7 @@
     .school_main-rating{
         display: none;
     }
-    .header{
-        justify-content: flex-end;
-    }
-    .header a{
+    .header-logo.logo-light{
         display: none;
     }
 }
@@ -493,6 +516,10 @@
 @media (max-width: 480px) {
     .header.logo-light {
         margin-bottom: 80px;
+    }
+
+    .school_general, .ld{
+        margin-bottom: 40px;
     }
 
     .school_block {
@@ -529,13 +556,13 @@
     .wall {
         height: 150px;
     }
+    .school_main-name{
+        font-size: 18px;
+        line-height: 18px;
+    }
 }
 
 @media (max-width: 380px) {
-    .header.logo-light {
-        margin-bottom: 140px;
-    }
-
     .school_block {
         min-width: 220px;
         height: 110px;
@@ -544,5 +571,11 @@
     .school_main-name {
         font-size: 18px;
         line-height: 18px;
+    }
+}
+
+@media (max-width:340px) {
+    .header.logo-light{
+        margin-bottom: 130px;
     }
 }

@@ -5,6 +5,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Event from "../components/event";
 import { supabase } from "../lib/supabase";
+import Loading from "../components/loading";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -25,6 +26,7 @@ export default function Events() {
     const [visibleCountEvents, setVisibleCountEvents] = useState(2);
     const [allEvents, setAllEvents] = useState<Event[]>([]);
     const visibleEvents = allEvents.slice(0, visibleCountEvents);
+    const [loading, setLoading] = useState(true);
     const loadMore = () => {
         setVisibleCountEvents(prev => prev + 2);
     };
@@ -45,11 +47,19 @@ export default function Events() {
             } catch (err) {
                 console.error("Ошибка:", err);
             }
+            finally {
+                setLoading(false);
+            }
+
         }
 
         fetchEvents();
     }, []);
 
+    if (loading) {
+        return (<Loading />);
+    }
+    
     return (
         <>
             <Header />

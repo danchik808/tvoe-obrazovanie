@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./home.css";
 import { supabase } from "../lib/supabase";
+import Loading from "../components/loading";
 
 
 export function meta({ }: Route.MetaArgs) {
@@ -44,6 +45,7 @@ interface SlideFromSupabase {
   text: string;
   button: string;
   image: string;
+  link: string;
 }
 
 export default function Home() {
@@ -119,12 +121,7 @@ export default function Home() {
 
   if (!showPage) {
     return (
-      <>
-        <div className="loading-screen">
-          <div className="spinner"></div>
-          <p>Предзагрузка...</p>
-        </div>
-      </>
+      <Loading />
     );
   }
 
@@ -141,7 +138,7 @@ export default function Home() {
                   <div className="slider_item" style={{ backgroundImage: `url(${item.image})` }}>
                     <h3 className="slider_headline" style={{ whiteSpace: 'pre-wrap' }}>{item.headline?.replace(/\\n/g, '\n')}</h3>
                     <p className="slider_text">{item.text}</p>
-                    <button className="slider_button"><a href="/">{item.button}</a></button>
+                    <button className="slider_button"><a href={item.link}>{item.button}</a></button>
                   </div>
                 </div>
               )

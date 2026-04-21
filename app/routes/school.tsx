@@ -22,6 +22,8 @@ interface SchoolFromSupabase {
     contacts: any[];
     achievements: any[];
     pro: any[];
+    contactLink: string;
+    schoolAddressLink: string;
 }
 
 export default function SchoolPage() {
@@ -50,19 +52,23 @@ export default function SchoolPage() {
                 </div>
             </div>
             <div className="school-container">
-                <section className="school_general">
+                <section className="school_general sg">
                     <h2 className="school_section-headline">Общая информация</h2>
                     <div className="school_blocks">
-                        <Link to="/" className="school_block school_block-one">
+                        <Link to={school.schoolAddressLink} target="_blank" rel="noopener noreferrer" className="school_block school_block-one">
                             <div className="hpd">
                                 <p className="school_block-headline">Адрес</p>
-                                <p className="school_block-text">{school.address}</p>
+                                <a href={school.schoolAddressLink} target="_blank" rel="noopener noreferrer" className="school_block-text">
+                                    {school.address}
+                                </a>
                             </div>
                         </Link>
                         <Link to={`${school.website}`} target="_blank" rel="noopener noreferrer" className="school_block">
                             <div className="hpd">
                                 <p className="school_block-headline">Сайт школы</p>
-                                <p className="school_block-text">{school.website}</p>
+                                <a href={school.website} target="_blank" rel="noopener noreferrer" className="school_block-text">
+                                    {school.website}
+                                </a>
                             </div>
                         </Link>
                         <div className="school_block">
@@ -73,7 +79,7 @@ export default function SchoolPage() {
                         </div>
                     </div>
                 </section>
-                <section className="school_profile">
+                <section className="school_profile ld">
                     <h2 className="school_section-headline">Профили классов</h2>
                     <div className="mini_blocks">
                         {school.pro && school.pro.map((item, index) => (
@@ -84,7 +90,7 @@ export default function SchoolPage() {
                         ))}
                     </div>
                 </section>
-                <section className="school_order">
+                <section className="school_order ld">
                     <h2 className="school_section-headline">Порядок поступления</h2>
                     <div className="mini_blocks">
                         {school.order && school.order.map((item, index) => (
@@ -94,7 +100,7 @@ export default function SchoolPage() {
                         ))}
                     </div>
                 </section>
-                <section className="school_society">
+                <section className="school_society ld">
                     <h2 className="school_section-headline">Кружки</h2>
                     <div className="mini_blocks">
                         {school.society && school.society.map((item, index) => (
@@ -109,12 +115,12 @@ export default function SchoolPage() {
                     <h2 className="school_section-headline">Контакты</h2>
                     <div className="school_blocks">
                         {school.contacts && school.contacts.map((item, index) => (
-                            <div className="school_block" key={index}>
+                            <a href={item.contactLink} className="school_block" key={index}>
                                 <div className="hpd">
                                     <p className="school_block-headline" style={{ whiteSpace: 'pre-wrap', lineHeight: '1.2' }}>{item.name}</p>
                                     <p className="school_block-text">{item.contact}</p>
                                 </div>
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </section>
