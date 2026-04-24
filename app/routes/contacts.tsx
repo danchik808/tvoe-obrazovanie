@@ -50,7 +50,7 @@ export default function Contacts() {
               </a>
               <a className="contacts-link" href="tel:+79991234567">
                 <p className="contacts-link_text">Позвоните нам</p>
-                <h3 className="contacts-link_headline">+7 999 999 99 99</h3>
+                <h3 className="contacts-link_headline">+7 (987) 654-32-11</h3>
                 <div className="contacts_strelka"></div>
               </a>
             </div>
@@ -60,10 +60,10 @@ export default function Contacts() {
               <h3 className="form_headline">Или заполните форму прямо сейчас</h3>
               <p className="form_text">Отвечаем быстрее скорости света</p>
             </div>
-            <Form action="/events" method="post" className="form-block">
+            <Form className="form-block">
               <div className="inputs">
-                <input name="name" type="text" placeholder={"Имя"} />
-                <input name="description" type="email" placeholder={"Email"} />
+                <input name="name" type="text" placeholder={"Имя"} required/>
+                <input name="description" type="email" placeholder={"Email"} required/>
               </div>
               <button type="submit" className="form_button">Отправить</button>
             </Form>

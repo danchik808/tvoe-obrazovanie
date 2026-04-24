@@ -291,7 +291,7 @@ export default function Rating() {
                             </div>
                         </div>
                         <div className="filters-main_buttons">
-                            <button className="reset-filters-btn" onClick={toggleFilters}>Скрыть фильтры</button>
+                            <button className="reset-filters-btn" onClick={toggleFilters}>Найти</button>
                             <button className="reset-filters-btn" onClick={resetFilters}>Сбросить все фильтры</button>
                             <p className="results-count">Найдено школ: {filteredSchools.length}</p>
                         </div>
