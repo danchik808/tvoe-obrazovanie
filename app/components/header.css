@@ -103,7 +103,7 @@ header {
 
 .burger_nav-links span {
     color: #000;
-    font-family: "Helvetica Neue" sans-serif;
+    font-family: "Helvetica Neue";
     font-size: 22px;
     font-weight: 500;
     line-height: 24px;
@@ -132,13 +132,13 @@ header {
 
 span {
     color: #000;
-    font-family: "Helvetica Neue" sans-serif;
+    font-family: "Helvetica Neue";
     font-size: 20px;
     font-weight: 500;
     line-height: 24px;
 }
 
-span:hover, .nav-link.logo-light span:hover {
+.nav-link span:hover, .nav-link.logo-light span:hover {
     color: #012AE4;
     transition: 0.1s ease-in-out;
 }

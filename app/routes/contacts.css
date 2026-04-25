@@ -89,7 +89,7 @@ main {
 
 .contacts-link_text {
     color: rgba(18, 18, 18, 0.80);
-    font-family: "Helvetica Neue" sans-serif;
+    font-family: "Helvetica Neue";
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -143,7 +143,7 @@ main {
 
 .form_headline {
     color: var(--Accent-white, #F4F7FF);
-    font-family: "Helvetica Neue" sans-serif;
+    font-family: "Helvetica Neue";
     font-size: 40px;
     font-style: normal;
     font-weight: 500;

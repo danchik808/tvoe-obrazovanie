@@ -19,6 +19,12 @@
     font-style: normal;
 }
 
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 .header {
     z-index: 1;
 }
@@ -108,7 +114,7 @@
     border-radius: 40px;
     background-color: #012AE4;
     color: var(--Background-white, #F5F5F5);
-    font-family: "Helvetica Neue" sans-serif;
+    font-family: "Helvetica Neue";
     font-size: 18px;
     font-style: normal;
     font-weight: 400;

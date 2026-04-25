@@ -50,7 +50,7 @@ export default function Contacts() {
               </a>
               <a className="contacts-link" href="tel:+79991234567">
                 <p className="contacts-link_text">Позвоните нам</p>
-                <h3 className="contacts-link_headline">+7 (987) 654-32-11</h3>
+                <h3 className="contacts-link_headline">+7 (917) 907-81-29</h3>
                 <div className="contacts_strelka"></div>
               </a>
             </div>

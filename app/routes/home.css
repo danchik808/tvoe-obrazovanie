@@ -89,7 +89,7 @@ body {
     background-color: #012AE40D;
     padding: 10px 15px;
     color: #012AE4;
-    font-family: "Helvetica Neue" sans-serif;
+    font-family: "Helvetica Neue";
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -124,7 +124,7 @@ body {
 .slider_text {
     color: rgba(18, 18, 18, 0.70);
     max-width: 600px;
-    font-family: "Helvetica Neue" sans-serif;
+    font-family: "Helvetica Neue";
     font-size: 20px;
     font-style: normal;
     font-weight: 400;

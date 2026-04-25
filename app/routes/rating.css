@@ -202,7 +202,7 @@ body {
     flex-shrink: 1;
     max-width: 128px;
     text-align: center;
-    background-image: url(img/filters.svg);
+    background-image: url(/img/filters.svg);
     background-repeat: no-repeat;
     background-position: 15px center;
     cursor: pointer;
