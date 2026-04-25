@@ -1,3 +1,4 @@
+import "./home.css";
 import type { Route } from "./+types/home";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -8,7 +9,6 @@ import { Suspense, useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./home.css";
 import { supabase } from "../lib/supabase";
 import Loading from "../components/loading";
 
